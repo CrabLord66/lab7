@@ -68,13 +68,25 @@
 
             <div class="one-post">
 
-                <h2 class="post-title">
+                <div class="post-heading">
 
-                    <a href="{% url 'get_article' article_id=post.id %}">
-                        {{ post.title }}
-                    </a>
+                    <h2 class="post-title">
 
-                </h2>
+                        <a href="{% url 'get_article' article_id=post.id %}">
+                            {{ post.title }}
+                        </a>
+
+                    </h2>
+
+                    <button
+                        type="button"
+                        class="fold-button"
+                        aria-expanded="true"
+                    >
+                        свернуть
+                    </button>
+
+                </div>
 
                 <div class="article-info">
 
@@ -100,7 +112,37 @@
 
         {% endfor %}
 
+        <div class="students-panel">
+
+            <h2>Работа с массивом студентов</h2>
+
+            <p>
+                Результаты работы JavaScript выводятся
+                в консоль браузера (F12 → Console).
+            </p>
+
+            <div class="student-controls">
+
+                <button type="button" id="show-students">
+                    Все студенты
+                </button>
+
+                <button type="button" id="filter-group">
+                    Фильтр по группе
+                </button>
+
+                <button type="button" id="filter-average">
+                    Фильтр по среднему баллу
+                </button>
+
+            </div>
+
+        </div>
+
     </div>
+
+    <script src="{% static 'articles/js/helloworld.js' %}"></script>
+    <script src="{% static 'articles/js/fold-post.js' %}"></script>
 
 </body>
 </html>

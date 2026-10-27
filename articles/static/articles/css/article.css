@@ -1,10 +1,9 @@
-/* Общие настройки сайта */
+/* Общие настройки */
 
 body {
     background: #1abc9c;
     font-family: Tahoma, Arial, sans-serif;
     color: #ffffff;
-
     margin: 0;
     padding: 0;
 }
@@ -14,7 +13,6 @@ body {
 .header {
     width: 960px;
     max-width: calc(100% - 40px);
-
     margin: 30px auto 50px;
     position: relative;
 }
@@ -26,7 +24,6 @@ body {
     width: 318px;
     max-width: 75%;
     height: auto;
-
     margin-left: auto;
     margin-right: auto;
 }
@@ -77,16 +74,11 @@ body {
     cursor: pointer;
 }
 
-.logout-button:hover {
-    color: #e0f7f3;
-}
-
 /* Архив статей */
 
 .archive > .archive {
     width: 960px;
     max-width: calc(100% - 40px);
-
     margin-left: auto;
     margin-right: auto;
 }
@@ -95,14 +87,14 @@ body {
     margin-bottom: 45px;
 }
 
-/* Страница отдельной статьи */
+/* Заголовок и кнопка статьи */
 
-.article-content {
-    width: 960px;
-    max-width: calc(100% - 40px);
-
-    margin-left: auto;
-    margin-right: auto;
+.post-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 18px;
 }
 
 /* Названия статей */
@@ -110,9 +102,7 @@ body {
 .post-title {
     font-size: 26px;
     font-weight: bold;
-
-    margin-top: 0;
-    margin-bottom: 20px;
+    margin: 0;
 }
 
 .post-title a {
@@ -159,6 +149,15 @@ body {
     margin-bottom: 16px;
 }
 
+/* Страница отдельной статьи */
+
+.article-content {
+    width: 960px;
+    max-width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .article .post-title {
     font-size: 30px;
     margin-bottom: 25px;
@@ -175,7 +174,6 @@ body {
 .auth-page .content {
     width: 700px;
     max-width: calc(100% - 40px);
-
     margin: 0 auto 60px;
 }
 
@@ -189,22 +187,16 @@ body {
     margin-bottom: 25px;
 }
 
-/* Расположение элементов формы */
-
 .form-panel {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* Подписи полей */
-
 .form-panel label {
     font-size: 16px;
     font-weight: bold;
 }
-
-/* Текстовые поля */
 
 .form-panel input[type="text"],
 .form-panel input[type="email"],
@@ -212,7 +204,6 @@ body {
 .form-panel textarea {
     width: 100%;
     box-sizing: border-box;
-
     padding: 12px;
 
     font-family: Tahoma, Arial, sans-serif;
@@ -229,15 +220,11 @@ body {
     resize: vertical;
 }
 
-/* Выделение активного поля */
-
 .form-panel input:focus,
 .form-panel textarea:focus {
     outline: 2px solid #176156;
     border-color: #176156;
 }
-
-/* Кнопки отправки форм */
 
 .submit-button {
     width: 230px;
@@ -287,6 +274,106 @@ body {
     text-decoration: underline;
 }
 
+/* ----------------------------------- */
+/* Новые стили лабораторной № 7        */
+/* ----------------------------------- */
+
+/* Кнопки сворачивания статей */
+
+.fold-button {
+    flex-shrink: 0;
+
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+
+    padding: 7px 12px;
+
+    background: #23796e;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.fold-button:hover {
+    background: #176156;
+}
+
+/* Скрытие автора у свёрнутой статьи */
+
+.one-post.folded .article-author {
+    display: none;
+}
+
+/* Скрытие даты у свёрнутой статьи */
+
+.one-post.folded .article-created-date {
+    display: none;
+}
+
+/* Скрытие текста у свёрнутой статьи */
+
+.one-post.folded .article-text {
+    display: none;
+}
+
+/* Скрытие пустого блока с информацией */
+
+.one-post.folded .article-info {
+    display: none;
+}
+
+/* Панель демонстрации JavaScript */
+
+.students-panel {
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    border-top: 1px solid #ffffff;
+    padding-top: 25px;
+}
+
+.students-panel h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.students-panel p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Кнопки работы со студентами */
+
+.student-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.student-controls button {
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+
+    padding: 12px 18px;
+
+    background: #23796e;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.student-controls button:hover {
+    background: #176156;
+}
+
 /* Адаптация для небольших экранов */
 
 @media (max-width: 700px) {
@@ -297,10 +384,8 @@ body {
 
     .site-nav {
         position: static;
-
         justify-content: center;
         flex-wrap: wrap;
-
         margin-top: 20px;
     }
 
@@ -328,5 +413,14 @@ body {
 
     .submit-button {
         width: 100%;
+    }
+
+    .post-heading {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .student-controls {
+        flex-direction: column;
     }
 }
